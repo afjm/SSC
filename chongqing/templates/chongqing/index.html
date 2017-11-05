@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chongqing homepage</title>
+</head>
+<body>
+<h1>这里是重庆首页</h1>
+{% if last.qihao == rs.0 %}
+    <h1>{{ last.qihao }}, 开奖号码：{{ rs.1 }}--{{ rs.2 }}--{{ rs.3 }}--{{ rs.4 }}--{{ rs.5 }}</h1>
+{% else %}
+    <h1>不是最新一期号码，请点击按钮同步</h1>
+    <form action="" method="post">
+        <label for="start">起始期号</label>
+        <input type="text" name="start" id="start" value={{ last.qihao }}>
+        <label for="end">结束期号</label>
+        <input type="text" name="end" id='end' value={{ rs.0 }}>
+        <input type="submit" value="开始同步">
+    </form>
+{% endif %}
+</body>
+</html>
